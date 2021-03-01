@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/usersFragment">
+
+    <fragment
+        android:id="@+id/usersFragment"
+        tools:layout="@layout/fragment_users"
+        android:name="ru.zmeytee.simpleproject.ui.users.UsersFragment"
+        android:label="UsersFragment" >
+        <action
+            android:id="@+id/action_usersFragment_to_postsFragment"
+            app:destination="@id/postsFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postsFragment"
+        tools:layout="@layout/fragment_posts"
+        android:name="ru.zmeytee.simpleproject.ui.posts.PostsFragment"
+        android:label="PostsFragment" >
+        <action
+            android:id="@+id/action_postsFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/commentsFragment"
+        tools:layout="@layout/fragment_comments"
+        android:name="ru.zmeytee.simpleproject.ui.comments.CommentsFragment"
+        android:label="CommentsFragment" />
+
+    <fragment
+        android:id="@+id/albumsFragment"
+        tools:layout="@layout/fragment_albums"
+        android:name="ru.zmeytee.simpleproject.ui.albums.AlbumsFragment"
+        android:label="AlbumsFragment" >
+        <action
+            android:id="@+id/action_albumsFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photosFragment"
+        tools:layout="@layout/fragment_photos"
+        android:name="ru.zmeytee.simpleproject.ui.photos.PhotosFragment"
+        android:label="PhotosFragment" />
+
+</navigation>
