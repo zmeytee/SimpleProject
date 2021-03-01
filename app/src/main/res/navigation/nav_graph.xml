@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/usersFragment"
         tools:layout="@layout/fragment_users"
-        android:name="ru.zmeytee.simpleproject.ui.users.UsersFragment"
+        android:name="ru.zmeytee.simpleproject.ui.persons.PersonsFragment"
         android:label="UsersFragment" >
         <action
             android:id="@+id/action_usersFragment_to_postsFragment"
