@@ -1,7 +1,9 @@
 package ru.zmeytee.simpleproject.repositories
 
-import ru.zmeytee.simpleproject.networking.Api
-import javax.inject.Inject
+import ru.zmeytee.simpleproject.data.models.Person
 
-class PersonsRepository @Inject constructor(api: Api) {
+interface PersonsRepository {
+
+    suspend fun getAllPersons(): List<Person>
+    suspend fun getPersonById(id: Long): Person
 }

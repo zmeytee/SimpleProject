@@ -8,6 +8,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
 import ru.zmeytee.simpleproject.networking.Api
 import javax.inject.Singleton
@@ -34,6 +35,7 @@ class NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
+                .addConverterFactory(MoshiConverterFactory.create())
             .baseUrl(BASE_URL)
             .build()
     }

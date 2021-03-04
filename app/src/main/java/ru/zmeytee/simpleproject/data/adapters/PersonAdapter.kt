@@ -13,14 +13,14 @@ class PersonAdapter: AsyncListDifferDelegationAdapter<Person>(PersonDiffUtilCall
     class PersonDiffUtilCallback: DiffUtil.ItemCallback<Person>() {
         override fun areItemsTheSame(oldItem: Person, newItem: Person): Boolean {
             return when {
-                oldItem is Person.User && newItem is Person.User -> oldItem.id == newItem.id
+                oldItem is Person.SimpleUser && newItem is Person.SimpleUser -> oldItem.id == newItem.id
                 else -> false
             }
         }
 
         override fun areContentsTheSame(oldItem: Person, newItem: Person): Boolean {
             return when {
-                oldItem is Person.User && newItem is Person.User -> oldItem == newItem
+                oldItem is Person.SimpleUser && newItem is Person.SimpleUser -> oldItem == newItem
                 else -> false
             }
         }

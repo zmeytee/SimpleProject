@@ -11,9 +11,10 @@ import ru.zmeytee.simpleproject.R
 import ru.zmeytee.simpleproject.data.adapters.PersonAdapter
 import ru.zmeytee.simpleproject.databinding.FragmentUsersBinding
 import ru.zmeytee.simpleproject.utils.autoCleared
+import kotlin.random.Random
 
 @AndroidEntryPoint
-class PersonsFragment: Fragment(R.layout.fragment_users) {
+class PersonsFragment(): Fragment(R.layout.fragment_users) {
 
     private val viewModel by viewModels<PersonsViewModel>()
     private val binding by viewBinding(FragmentUsersBinding::bind)
@@ -22,14 +23,21 @@ class PersonsFragment: Fragment(R.layout.fragment_users) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initPersonsList()
         bindViewModel()
-        viewModel.initTestData()
+        setListeners()
+        initPersonsList()
+        viewModel.getAllPersons()
     }
 
     private fun bindViewModel() {
         with(viewModel) {
             persons.observe(viewLifecycleOwner) { personAdapter.items = it }
+        }
+    }
+
+    private fun setListeners() {
+        binding.getUserButton.setOnClickListener {
+            viewModel.getPersonById(Random.nextLong(1, 10))
         }
     }
 
