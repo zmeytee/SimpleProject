@@ -3,19 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/usersFragment">
+    app:startDestination="@id/personsFragment">
 
     <fragment
-        android:id="@+id/usersFragment"
-        tools:layout="@layout/fragment_users"
-        android:name="ru.zmeytee.simpleproject.ui.persons.PersonsFragment"
+        android:id="@+id/personsFragment"
+        tools:layout="@layout/fragment_persons"
+        android:name="ru.zmeytee.simpleproject.ui.persons.list.PersonsFragment"
         android:label="UsersFragment" >
         <action
-            android:id="@+id/action_usersFragment_to_postsFragment"
-            app:destination="@id/postsFragment" />
-        <action
-            android:id="@+id/action_usersFragment_to_albumsFragment"
-            app:destination="@id/albumsFragment" />
+            android:id="@+id/action_personsFragment_to_personDetailsFragment"
+            app:destination="@id/personDetailsFragment" />
     </fragment>
 
     <fragment
@@ -49,5 +46,21 @@
         tools:layout="@layout/fragment_photos"
         android:name="ru.zmeytee.simpleproject.ui.photos.PhotosFragment"
         android:label="PhotosFragment" />
+
+    <fragment
+        android:id="@+id/personDetailsFragment"
+        tools:layout="@layout/fragment_person_details"
+        android:name="ru.zmeytee.simpleproject.ui.persons.detail.PersonDetailsFragment"
+        android:label="PersonDetailsFragment" >
+        <action
+            android:id="@+id/action_personDetailsFragment_to_postsFragment"
+            app:destination="@id/postsFragment" />
+        <action
+            android:id="@+id/action_personDetailsFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
+        <argument
+            android:name="personId"
+            app:argType="long" />
+    </fragment>
 
 </navigation>

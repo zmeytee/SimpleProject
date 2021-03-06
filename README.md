@@ -1,6 +1,6 @@
 # SimpleProject
 
-Простой учебный проект
+Простенький проект для закрепления практических навыков
 
 Используется REST Api {JSON} Placeholder (https://jsonplaceholder.typicode.com/)
 

@@ -4,10 +4,10 @@ import androidx.recyclerview.widget.DiffUtil
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import ru.zmeytee.simpleproject.data.models.Person
 
-class PersonAdapter: AsyncListDifferDelegationAdapter<Person>(PersonDiffUtilCallback()) {
+class PersonAdapter(onClick: (id: Long) -> Unit): AsyncListDifferDelegationAdapter<Person>(PersonDiffUtilCallback()) {
 
     init {
-        delegatesManager.addDelegate(UserAdapterDelegate())
+        delegatesManager.addDelegate(UserAdapterDelegate(onClick))
     }
 
     class PersonDiffUtilCallback: DiffUtil.ItemCallback<Person>() {
