@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hannesdorfmann.adapterdelegates4.AbsListItemAdapterDelegate
-import ru.zmeytee.simpleproject.data.models.Person
+import ru.zmeytee.simpleproject.data.models.User
 import ru.zmeytee.simpleproject.databinding.ItemUserBinding
 
 class UserAdapterDelegate(
     private val onClick: (id: Long) -> Unit
-) : AbsListItemAdapterDelegate<Person.SimpleUser, Person, UserAdapterDelegate.Holder>() {
+) : AbsListItemAdapterDelegate<User.SimpleUser, User, UserAdapterDelegate.Holder>() {
 
-    override fun isForViewType(item: Person, items: MutableList<Person>, position: Int): Boolean {
-        return item is Person.SimpleUser
+    override fun isForViewType(item: User, items: MutableList<User>, position: Int): Boolean {
+        return item is User.SimpleUser
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): Holder {
@@ -22,7 +22,7 @@ class UserAdapterDelegate(
         )
     }
 
-    override fun onBindViewHolder(item: Person.SimpleUser, holder: Holder, payloads: MutableList<Any>) {
+    override fun onBindViewHolder(item: User.SimpleUser, holder: Holder, payloads: MutableList<Any>) {
         holder.bind(item)
     }
 
@@ -37,7 +37,7 @@ class UserAdapterDelegate(
             binding.root.setOnClickListener { userId?.let(onClick) }
         }
 
-        fun bind(item: Person.SimpleUser) {
+        fun bind(item: User.SimpleUser) {
             userId = item.id
 
             with(binding) {

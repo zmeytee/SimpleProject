@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/personsFragment">
+    app:startDestination="@id/usersFragment">
 
     <fragment
-        android:id="@+id/personsFragment"
-        tools:layout="@layout/fragment_persons"
-        android:name="ru.zmeytee.simpleproject.ui.persons.list.PersonsFragment"
+        android:id="@+id/usersFragment"
+        tools:layout="@layout/fragment_users"
+        android:name="ru.zmeytee.simpleproject.ui.users.list.UsersFragment"
         android:label="UsersFragment" >
         <action
-            android:id="@+id/action_personsFragment_to_personDetailsFragment"
-            app:destination="@id/personDetailsFragment" />
+            android:id="@+id/action_usersFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
         <action
-            android:id="@+id/action_personsFragment_to_addPersonDialogFragment"
-            app:destination="@id/addPersonDialogFragment" />
+            android:id="@+id/action_usersFragment_to_addUserDialogFragment"
+            app:destination="@id/addUserDialogFragment" />
     </fragment>
 
     <fragment
@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_postsFragment_to_commentsFragment"
             app:destination="@id/commentsFragment" />
+        <argument
+            android:name="userId"
+            app:argType="long" />
     </fragment>
 
     <fragment
@@ -42,33 +45,40 @@
         <action
             android:id="@+id/action_albumsFragment_to_photosFragment"
             app:destination="@id/photosFragment" />
+        <argument
+            android:name="userId"
+            app:argType="long" />
     </fragment>
 
     <fragment
         android:id="@+id/photosFragment"
         tools:layout="@layout/fragment_photos"
         android:name="ru.zmeytee.simpleproject.ui.photos.PhotosFragment"
-        android:label="PhotosFragment" />
+        android:label="PhotosFragment" >
+        <argument
+            android:name="albumId"
+            app:argType="long" />
+    </fragment>
 
     <fragment
-        android:id="@+id/personDetailsFragment"
-        tools:layout="@layout/fragment_person_details"
-        android:name="ru.zmeytee.simpleproject.ui.persons.detail.PersonDetailsFragment"
+        android:id="@+id/userDetailsFragment"
+        tools:layout="@layout/fragment_user_details"
+        android:name="ru.zmeytee.simpleproject.ui.users.detail.UserDetailsFragment"
         android:label="PersonDetailsFragment" >
         <action
-            android:id="@+id/action_personDetailsFragment_to_postsFragment"
+            android:id="@+id/action_userDetailsFragment_to_postsFragment"
             app:destination="@id/postsFragment" />
         <action
-            android:id="@+id/action_personDetailsFragment_to_albumsFragment"
+            android:id="@+id/action_userDetailsFragment_to_albumsFragment"
             app:destination="@id/albumsFragment" />
         <argument
-            android:name="personId"
+            android:name="userId"
             app:argType="long" />
     </fragment>
     <dialog
-        android:id="@+id/addPersonDialogFragment"
-        tools:layout="@layout/dialog_add_person"
-        android:name="ru.zmeytee.simpleproject.ui.persons.add.AddPersonDialogFragment"
-        android:label="AddPersonDialogFragment" />
+        android:id="@+id/addUserDialogFragment"
+        tools:layout="@layout/dialog_add_user"
+        android:name="ru.zmeytee.simpleproject.ui.users.add.AddUserDialogFragment"
+        android:label="AddUserDialogFragment" />
 
 </navigation>
