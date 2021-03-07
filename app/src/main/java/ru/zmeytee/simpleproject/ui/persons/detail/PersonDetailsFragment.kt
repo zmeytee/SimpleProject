@@ -44,13 +44,13 @@ class PersonDetailsFragment(): Fragment(R.layout.fragment_person_details) {
 
     private fun showAdvancedUserDetails(advancedUser: Person.AdvancedUser) {
         with(binding) {
-            name.text = advancedUser.name
-            userName.text = advancedUser.username
-            email.text = advancedUser.email
-            addressStreet.text = advancedUser.address.street
-            addressCity.text = advancedUser.address.city
-            companyName.text = advancedUser.company.name
-            companyCatchPhrase.text = advancedUser.company.catchPhrase
+            nameTextView.text = advancedUser.name
+            userNameTextView.text = advancedUser.username
+            emailTextView.text = advancedUser.email
+            addressStreetTextView.text = advancedUser.address.street
+            addressCityTextView.text = advancedUser.address.city
+            companyNameTextView.text = advancedUser.company.name
+            companyCatchPhraseTextView.text = advancedUser.company.catchPhrase
         }
     }
 }

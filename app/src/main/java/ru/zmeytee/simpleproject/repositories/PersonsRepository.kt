@@ -6,4 +6,5 @@ interface PersonsRepository {
 
     suspend fun getAllPersons(): List<Person>
     suspend fun getPersonById(id: Long): Person
+    suspend fun addPerson(person: Person)
 }

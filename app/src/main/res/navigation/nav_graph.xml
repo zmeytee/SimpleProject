@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_personsFragment_to_personDetailsFragment"
             app:destination="@id/personDetailsFragment" />
+        <action
+            android:id="@+id/action_personsFragment_to_addPersonDialogFragment"
+            app:destination="@id/addPersonDialogFragment" />
     </fragment>
 
     <fragment
@@ -62,5 +65,10 @@
             android:name="personId"
             app:argType="long" />
     </fragment>
+    <dialog
+        android:id="@+id/addPersonDialogFragment"
+        tools:layout="@layout/dialog_add_person"
+        android:name="ru.zmeytee.simpleproject.ui.persons.add.AddPersonDialogFragment"
+        android:label="AddPersonDialogFragment" />
 
 </navigation>

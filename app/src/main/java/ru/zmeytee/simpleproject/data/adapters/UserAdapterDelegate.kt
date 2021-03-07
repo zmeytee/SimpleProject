@@ -41,9 +41,9 @@ class UserAdapterDelegate(
             userId = item.id
 
             with(binding) {
-                userName.text = item.name
-                userEmail.text = item.email
-                userPhone.text = item.phone
+                itemUserNameTextView.text = item.name
+                itemUserEmailTextView.text = item.email
+                itemUserPhoneTextView.text = item.phone
             }
         }
     }

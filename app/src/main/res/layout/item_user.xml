@@ -11,14 +11,14 @@
     android:padding="4dp">
 
     <TextView
-        android:id="@+id/userName"
+        android:id="@+id/itemUserNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         tools:text="User name" />
 
     <TextView
-        android:id="@+id/userEmail"
+        android:id="@+id/itemUserEmailTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
@@ -27,7 +27,7 @@
         tools:text="Sincere@april.biz" />
 
     <TextView
-        android:id="@+id/userPhone"
+        android:id="@+id/itemUserPhoneTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"

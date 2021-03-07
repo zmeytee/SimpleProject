@@ -23,9 +23,16 @@ class PersonsFragment : Fragment(R.layout.fragment_persons) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        setListeners()
         bindViewModel()
         initPersonsList()
         viewModel.getAllPersons()
+    }
+
+    private fun setListeners() {
+        binding.addPersonFab.setOnClickListener {
+            findNavController().navigate(R.id.action_personsFragment_to_addPersonDialogFragment)
+        }
     }
 
     private fun bindViewModel() {
