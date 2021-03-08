@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_usersFragment_to_userDetailsFragment"
             app:destination="@id/userDetailsFragment" />
-        <action
-            android:id="@+id/action_usersFragment_to_addUserDialogFragment"
-            app:destination="@id/addUserDialogFragment" />
     </fragment>
 
     <fragment
@@ -35,7 +32,11 @@
         android:id="@+id/commentsFragment"
         tools:layout="@layout/fragment_comments"
         android:name="ru.zmeytee.simpleproject.ui.comments.CommentsFragment"
-        android:label="CommentsFragment" />
+        android:label="CommentsFragment" >
+        <argument
+            android:name="postId"
+            app:argType="long" />
+    </fragment>
 
     <fragment
         android:id="@+id/albumsFragment"
@@ -75,10 +76,5 @@
             android:name="userId"
             app:argType="long" />
     </fragment>
-    <dialog
-        android:id="@+id/addUserDialogFragment"
-        tools:layout="@layout/dialog_add_user"
-        android:name="ru.zmeytee.simpleproject.ui.users.add.AddUserDialogFragment"
-        android:label="AddUserDialogFragment" />
 
 </navigation>

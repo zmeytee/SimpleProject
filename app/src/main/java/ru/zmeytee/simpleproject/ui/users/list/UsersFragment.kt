@@ -26,13 +26,11 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
         setListeners()
         bindViewModel()
         initUsersList()
-        viewModel.getAllUsers()
+        if (savedInstanceState == null) { viewModel.getAllUsers() }
     }
 
     private fun setListeners() {
-        binding.addUserFab.setOnClickListener {
-            findNavController().navigate(R.id.action_usersFragment_to_addUserDialogFragment)
-        }
+
     }
 
     private fun bindViewModel() {

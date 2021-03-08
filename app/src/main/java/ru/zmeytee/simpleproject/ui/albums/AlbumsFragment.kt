@@ -28,7 +28,7 @@ class AlbumsFragment: Fragment(R.layout.fragment_albums) {
         bindViewModel()
         setListeners()
         initAlbumList()
-        viewModel.getAllAlbums(args.userId)
+        if (savedInstanceState == null) { viewModel.getAllAlbums(args.userId) }
     }
 
     private fun bindViewModel() {
@@ -36,9 +36,7 @@ class AlbumsFragment: Fragment(R.layout.fragment_albums) {
     }
 
     private fun setListeners() {
-        binding.addAlbumFab.setOnClickListener {
 
-        }
     }
 
     private fun initAlbumList() {

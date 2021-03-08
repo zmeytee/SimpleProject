@@ -10,7 +10,7 @@ class AlbumsRepository @Inject constructor(private val api: Api) {
 
     suspend fun getAllAlbums(userId: Long): List<Album> {
         return withContext(Dispatchers.IO) {
-            api.getUserAlbums(userId)
+            api.getAlbums(userId)
         }
     }
 }

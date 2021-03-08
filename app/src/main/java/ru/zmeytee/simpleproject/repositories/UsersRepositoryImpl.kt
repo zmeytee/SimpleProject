@@ -26,7 +26,7 @@ class UsersRepositoryImpl @Inject constructor(private val api: Api): UsersReposi
     }
 
     private suspend fun getRemoteUserById(id: Long): User.AdvancedUser {
-        return api.getUserById(id)
+        return api.getUser(id)
     }
 
     override suspend fun addUser(user: User) {
